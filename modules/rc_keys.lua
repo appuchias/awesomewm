@@ -2,6 +2,7 @@ local gears = require("gears")
 local awful = require("awful")
 local vars = require("modules.vars")
 local hotkeys_popup = require("awful.hotkeys_popup")
+local naughty = require("naughty")
 
 local modkey = vars.modkey
 
@@ -265,6 +266,12 @@ end, {
     description = "Toggle focused screen",
     group = "screen"
 }), awful.key({modkey}, "l", function()
+    naughty.notify {
+        title = "Locking screen",
+        text = "Locking screen in 5 seconds",
+        timeout = 5,
+        position = "top_middle"
+    }
     awful.spawn("lock")
 end, {
     description = "Lock screen",
