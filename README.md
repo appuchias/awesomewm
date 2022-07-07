@@ -8,9 +8,11 @@
 
 This repo holds all the files contained in my AwesomeWM installation. Feel free to use any bit of them.
 
-## Setup
+## How it looks
 
-1. Not yet intended for setup
+> ![Screenshot](Screenshot.png)
+
+## Not yet intended for installation
 
 ## License
 
