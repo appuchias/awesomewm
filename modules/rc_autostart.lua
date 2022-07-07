@@ -18,22 +18,6 @@ edp = 1 -- Integrated
 dp1 = screen.count() -- External monitor if it exists else integrated
 
 -- Applications
--- r.run(vars.cmd_browser, {
---     tag = vars.tags[dp1][2]
--- })
--- r.run(vars.cmd_discord, {
---     tag = vars.tags[edp][1]
--- })
--- r.run(vars.cmd_spotify, {
---     tag = vars.tags[edp][2]
--- })
--- r.run("telegram-desktop", {
---     tag = vars.tags[edp][3]
--- })
---
--- awful.spawn.once(vars.terminal, {
---     tag = vars.tags[dp1][1]
--- })
 awful.spawn.once(vars.cmd_browser, {
     tag = vars.tags[dp1][2]
 })
@@ -46,12 +30,6 @@ awful.spawn.once(vars.cmd_spotify, {
 awful.spawn.once("telegram-desktop", {
     tag = vars.tags[edp][3]
 })
--- awful.spawn.once("kitty -e btop", {
---     tag = vars.tags[edp][4]
--- })
--- awful.spawn.once("kitty -e nvtop", {
---     tag = vars.tags[edp][5]
--- })
 
 -- Setup mouse
 awful.spawn.with_shell("mmove &")
