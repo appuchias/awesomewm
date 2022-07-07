@@ -259,7 +259,7 @@ end, {
     group = "awesome"
 }), --
 -- Screen -----------------------------------------------------
-awful.key({modkey, "Shift"}, "Up", function()
+awful.key({modkey}, ",", function()
     awful.screen.focus_relative(1)
 end, {
     description = "Toggle focused screen",
@@ -364,12 +364,7 @@ end, {
 end, {
     description = "Toggle floating",
     group = "client"
-    -- }), awful.key({modkey, "Control"}, "Return", function(c)
-    --     c:swap(awful.client.getmaster())
-    -- end, {
-    --     description = "Move to master",
-    --     group = "client"
-}), awful.key({modkey}, ",", function(c)
+}), awful.key({modkey, "Shift"}, ",", function(c)
     c:move_to_screen()
 end, {
     description = "Toggle screen",
