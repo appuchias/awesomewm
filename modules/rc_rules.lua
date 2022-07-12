@@ -43,7 +43,7 @@ awful.rules.rules = {{ --
     }
 }, {
     rule_any = {
-        class = {"Rustdesk"}
+        class = {"Rustdesk", "stacer"}
     },
     properties = {
         floating = true
