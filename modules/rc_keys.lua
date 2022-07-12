@@ -29,6 +29,11 @@ end, {
 end, {
     description = "Open Web browser",
     group = "programs"
+}), awful.key({modkey, "Shift"}, "f", function()
+    awful.spawn(vars.cmd_browser .. " -P Privacy+")
+end, {
+    description = "Open Web browser",
+    group = "programs"
 }), awful.key({modkey}, "e", function()
     awful.spawn(vars.cmd_file_explorer)
 end, {
@@ -55,7 +60,9 @@ end, {
     description = "Set the keyboard properly",
     group = "programs"
 }), awful.key({modkey}, "b", function()
-    awful.spawn("kitty -e btop")
+    awful.spawn("kitty -e btop", {
+        floating = true
+    })
 end, {
     description = "Open btop in a kitty term",
     group = "programs"
@@ -193,7 +200,7 @@ end, {
 end, {
     description = "Jump to urgent client",
     group = "client"
-}), awful.key({modkey, "Control"}, "n", function()
+}), awful.key({modkey, "Control", "Shift"}, "n", function()
     local c = awful.client.restore()
     if c then
         c:emit_signal("request::activate", "key.unminimize", {
@@ -353,7 +360,7 @@ for i = 1, 5 do
 end
 
 keys.clientkeys = gears.table.join( -- Keys that work directly with clients
-awful.key({modkey, "Shift"}, "f", function(c)
+awful.key({modkey, "Control"}, "f", function(c)
     c.fullscreen = not c.fullscreen
     c:raise()
 end, {
@@ -386,12 +393,12 @@ end, {
 end, {
     description = "Center floating window",
     group = "client"
-}), awful.key({modkey}, "n", function(c)
+}), awful.key({modkey, "Control"}, "n", function(c)
     c.minimized = true
 end, {
     description = "minimize",
     group = "client"
-}), awful.key({modkey}, "m", function(c)
+}), awful.key({modkey, "Control"}, "m", function(c)
     c.maximized = not c.maximized
     c:raise()
 end, {
